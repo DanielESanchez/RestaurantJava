@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.*;
 import java.util.Arrays;
@@ -10,6 +11,7 @@ public class GetDataPerson {
     public List<Person> getData() throws IOException {
         GetFileData app = new GetFileData();
         ObjectMapper mapper = new ObjectMapper();
+        //mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         String data = app.getFileFromResourceAsStream(this.fileName);
         //String data = convertInputStreamToString(is);
         List<Person> list = Arrays.asList(mapper.readValue(data, Person[].class));

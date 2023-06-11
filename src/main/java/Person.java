@@ -1,19 +1,68 @@
 public class Person {
-    public String id;
-    public int index;
-    public int age;
-    public String eyeColor;
-    public String name;
-    public String lastName;
-    public String gender;
-    public String email;
-    public String phone;
-    public String address;
-    public String about;
-    public String registered;
+    private String id;
+    private int index;
+    private int age;
+    private String eyeColor;
+    private String name;
+    private String lastName;
+    private String gender;
+    private String email;
+    private String phone;
+    private String address;
+    private String about;
+    private String registered;
     public boolean isEmployee;
-    public String job;
-    public String  hireDate;
-    public boolean isWorking;
-    public float salary;
+
+    public String getId() {
+        return id;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getEyeColor() {
+        return eyeColor;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public String getRegistered() {
+        return registered;
+    }
+
+    public boolean getIsEmployee() {
+        return isEmployee;
+    }
+
 }
