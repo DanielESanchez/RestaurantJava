@@ -4,8 +4,8 @@
     "name": "3 Chicken Wings",
     "price": 250,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Appeteasers",
+    "cuisineName": "Indian",
+    "categoryName": "Appeteasers",
     "description": "Tender, Spicy and Juicy. Original or Peri-Crusted"
   },
   {
@@ -13,8 +13,8 @@
     "name": "Chicken Livers and Portuguese Roll",
     "price": 250,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Appeteasers",
+    "cuisineName": "Indian",
+    "categoryName": "Appeteasers",
     "description": "Chicken Livers Topped with PERi-PERi Sauce, Served with A Roll To Soak Up The Sauce"
   },
   {
@@ -22,8 +22,8 @@
     "name": "Spicy Mixed Olives (V)",
     "price": 215,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Appeteasers",
+    "cuisineName": "Indian",
+    "categoryName": "Appeteasers",
     "description": "Co-Starring Garlic, Pepper and Chili"
   },
   {
@@ -31,8 +31,8 @@
     "name": "Hummus with PERI-PERI Drizzle (V)",
     "price": 215,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Appeteasers",
+    "cuisineName": "Indian",
+    "categoryName": "Appeteasers",
     "description": "Pour Smoky PERi-PERi Oil Over Creamy Hummus and Dig in with Strips Of Warm Pita"
   },
   {
@@ -40,8 +40,8 @@
     "name": "Red Pepper Dip (V)",
     "price": 205,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Appeteasers",
+    "cuisineName": "Indian",
+    "categoryName": "Appeteasers",
     "description": "Dive Into Temping Roasted Red Pepper and Chili Spice Dip with Warm Pita Strips"
   },
   {
@@ -49,8 +49,8 @@
     "name": "Appeteaser Platter",
     "price": 615,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Appeteasers",
+    "cuisineName": "Indian",
+    "categoryName": "Appeteasers",
     "description": "Choose any Three Appeteasers"
   },
   {
@@ -58,8 +58,8 @@
     "name": "All Together Now (V)",
     "price": 520,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Appeteasers",
+    "cuisineName": "Indian",
+    "categoryName": "Appeteasers",
     "description": "Spicy Mixed Olives, Red Pepper Dip, Hummus with PERi-PERi Drizzle and Warm Pita Strips"
   },
   {
@@ -67,8 +67,8 @@
     "name": "PERi-PERi Wedges (P) Regular",
     "price": 190,
     "consumable": "1:1",
-    "cuisine_name": "Fast Food",
-    "category_name": "Fino sides",
+    "cuisineName": "Fast Food",
+    "categoryName": "Fino sides",
     "description": ""
   },
   {
@@ -76,8 +76,8 @@
     "name": "PERi-PERi Wedges (P) Large",
     "price": 330,
     "consumable": "1:1",
-    "cuisine_name": "Fast Food",
-    "category_name": "Fino sides",
+    "cuisineName": "Fast Food",
+    "categoryName": "Fino sides",
     "description": ""
   },
   {
@@ -85,8 +85,8 @@
     "name": "Corn-On-The-Cob Regular",
     "price": 190,
     "consumable": "1:1",
-    "cuisine_name": "Fast Food",
-    "category_name": "Fino sides",
+    "cuisineName": "Fast Food",
+    "categoryName": "Fino sides",
     "description": ""
   },
   {
@@ -94,8 +94,8 @@
     "name": "Corn-On-The-Cob Large",
     "price": 330,
     "consumable": "1:1",
-    "cuisine_name": "Fast Food",
-    "category_name": "Fino sides",
+    "cuisineName": "Fast Food",
+    "categoryName": "Fino sides",
     "description": ""
   },
   {
@@ -103,8 +103,8 @@
     "name": "1/4 Chicken On its own",
     "price": 385,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled"
   },
   {
@@ -112,8 +112,8 @@
     "name": "1/4 Chicken With 1 Regular Side",
     "price": 485,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled"
   },
   {
@@ -121,8 +121,8 @@
     "name": "1/4 Chicken With 2 Regular Sides",
     "price": 575,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled"
   },
   {
@@ -130,8 +130,8 @@
     "name": "1/2 Chicken On its own",
     "price": 685,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Half Chicken Marinated with PERi-PERi Sauce and Grilled"
   },
   {
@@ -139,8 +139,8 @@
     "name": "1/2 Chicken With 1 Regular Side",
     "price": 785,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Half Chicken Marinated with PERi-PERi Sauce and Grilled"
   },
   {
@@ -148,8 +148,8 @@
     "name": "1/2 Chicken With 2 Regular Sides",
     "price": 875,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Half Chicken Marinated with PERi-PERi Sauce and Grilled"
   },
   {
@@ -157,8 +157,8 @@
     "name": "5 Chicken Wings On its own",
     "price": 475,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Original Flavours or PERi-PEREi Crusted (P)"
   },
   {
@@ -166,8 +166,8 @@
     "name": "5 Chicken Wings With 1 Regular Side",
     "price": 575,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Original Flavours or PERi-PEREi Crusted (P)"
   },
   {
@@ -175,8 +175,8 @@
     "name": "5 Chicken Wings With 2 Regular Sides",
     "price": 665,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Original Flavours or PERi-PEREi Crusted (P)"
   },
   {
@@ -184,8 +184,8 @@
     "name": "Wing Roulette",
     "price": 750,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "10 Wings in PERi-PERi Flavors"
   },
   {
@@ -193,8 +193,8 @@
     "name": "Whole Chicken",
     "price": 1350,
     "consumable": "1:4",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Whole Chicken Marinated in PERi-PERi Sauce and Grilled"
   },
   {
@@ -202,8 +202,8 @@
     "name": "Chicken Butterfly On its own",
     "price": 495,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Succulent Double Chicken Breast in Crispy Skin"
   },
   {
@@ -211,8 +211,8 @@
     "name": "Chicken Butterfly With 1 Regular Side",
     "price": 595,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Succulent Double Chicken Breast in Crispy Skin"
   },
   {
@@ -220,8 +220,8 @@
     "name": "Chicken Butterfly With 2 Regular Sides",
     "price": 685,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Succulent Double Chicken Breast in Crispy Skin"
   },
   {
@@ -229,8 +229,8 @@
     "name": "Espetada On its own",
     "price": 695,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Tender Marinated Chicken Thighs and Fresh Peppers, Served on a Skewer"
   },
   {
@@ -238,8 +238,8 @@
     "name": "Espetada With 1 Regular Side",
     "price": 795,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Tender Marinated Chicken Thighs and Fresh Peppers, Served on a Skewer"
   },
   {
@@ -247,8 +247,8 @@
     "name": "Espetada With 2 Regular Sides",
     "price": 885,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Tender Marinated Chicken Thighs and Fresh Peppers, Served on a Skewer"
   },
   {
@@ -256,8 +256,8 @@
     "name": "Espetada Carnival On its own",
     "price": 825,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Flame-Grilled PERi-PERi Thighs, Stuffed with Feta and Parsley, Skewered with Mixed Peppers"
   },
   {
@@ -265,8 +265,8 @@
     "name": "Espetada Carnival With 1 Regular Side",
     "price": 925,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Flame-Grilled PERi-PERi Thighs, Stuffed with Feta and Parsley, Skewered with Mixed Peppers"
   },
   {
@@ -274,8 +274,8 @@
     "name": "Espetada Carnival With 2 Regular Sides",
     "price": 1015,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Flame-Grilled PERi-PERi Thighs, Stuffed with Feta and Parsley, Skewered with Mixed Peppers"
   },
   {
@@ -283,8 +283,8 @@
     "name": "Grilled Chicken Tenders On its own",
     "price": 200,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Juicy and Tender, Delicious with All Sides"
   },
   {
@@ -292,8 +292,8 @@
     "name": "Grilled Chicken Tenders With 1 Regular Side",
     "price": 300,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Juicy and Tender, Delicious with All Sides"
   },
   {
@@ -301,8 +301,8 @@
     "name": "Grilled Chicken Tenders With 2 Regular Sides",
     "price": 390,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Peri-peri chicken",
+    "cuisineName": "Indian",
+    "categoryName": "Peri-peri chicken",
     "description": "Juicy and Tender, Delicious with All Sides"
   },
   {
@@ -310,8 +310,8 @@
     "name": "Full Platter With 2 Large Sides",
     "price": 1765,
     "consumable": "1:4",
-    "cuisine_name": "Fast Food",
-    "category_name": "Sharing platters",
+    "cuisineName": "Fast Food",
+    "categoryName": "Sharing platters",
     "description": "For 3-4 People, Whole Chicken with  2 Large or 4 Regular Rides"
   },
   {
@@ -319,8 +319,8 @@
     "name": "Full Platter With 4 Regular Sides",
     "price": 1765,
     "consumable": "1:4",
-    "cuisine_name": "Fast Food",
-    "category_name": "Sharing platters",
+    "cuisineName": "Fast Food",
+    "categoryName": "Sharing platters",
     "description": "For 3-4 People, Whole Chicken with  2 Large or 4 Regular Rides"
   },
   {
@@ -328,8 +328,8 @@
     "name": "No Bones Platter With 2 Large Sides",
     "price": 1550,
     "consumable": "1:3",
-    "cuisine_name": "Indian",
-    "category_name": "Sharing platters",
+    "cuisineName": "Indian",
+    "categoryName": "Sharing platters",
     "description": "For 2-3 People, Chicken Butterfly and a Espetada, with 2 Large or 4 Regular Sides"
   },
   {
@@ -337,8 +337,8 @@
     "name": "No Bones Platter With 4 Regular Sides",
     "price": 1550,
     "consumable": "1:3",
-    "cuisine_name": "Indian",
-    "category_name": "Sharing platters",
+    "cuisineName": "Indian",
+    "categoryName": "Sharing platters",
     "description": "For 2-3 People, Chicken Butterfly and a Espetada, with 2 Large or 4 Regular Sides"
   },
   {
@@ -346,8 +346,8 @@
     "name": "Jumbo Platter",
     "price": 3595,
     "consumable": "1:6",
-    "cuisine_name": "Fast Food",
-    "category_name": "Sharing platters",
+    "cuisineName": "Fast Food",
+    "categoryName": "Sharing platters",
     "description": "For 4-6 People, 2 Whole Chickens and 5 Large Sides"
   },
   {
@@ -355,8 +355,8 @@
     "name": "Dessert Caramel Cheese Cake",
     "price": 230,
     "consumable": "1:1",
-    "cuisine_name": "Desserts",
-    "category_name": "Dessert",
+    "cuisineName": "Desserts",
+    "categoryName": "Dessert",
     "description": ""
   },
   {
@@ -364,8 +364,8 @@
     "name": "Dessert Lighten Up Chocolate Cake",
     "price": 230,
     "consumable": "1:1",
-    "cuisine_name": "Desserts",
-    "category_name": "Dessert",
+    "cuisineName": "Desserts",
+    "categoryName": "Dessert",
     "description": ""
   },
   {
@@ -373,8 +373,8 @@
     "name": "PERi-PERi Chips (P) Regular",
     "price": 130,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Sides",
+    "cuisineName": "Indian",
+    "categoryName": "Sides",
     "description": "Crunchy Chips with PERi-PERi Sauce"
   },
   {
@@ -382,8 +382,8 @@
     "name": "PERi-PERi Chips (P) Large",
     "price": 220,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Sides",
+    "cuisineName": "Indian",
+    "categoryName": "Sides",
     "description": "Crunchy Chips with PERi-PERi Sauce"
   },
   {
@@ -391,8 +391,8 @@
     "name": "Spicy Rice Regular",
     "price": 130,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Sides",
+    "cuisineName": "Indian",
+    "categoryName": "Sides",
     "description": "Spicy fried rice"
   },
   {
@@ -400,8 +400,8 @@
     "name": "Spicy Rice Large",
     "price": 220,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Sides",
+    "cuisineName": "Indian",
+    "categoryName": "Sides",
     "description": "Spicy fried rice"
   },
   {
@@ -409,8 +409,8 @@
     "name": "Coleslaw (M) Regular",
     "price": 130,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Sides",
+    "cuisineName": "Indian",
+    "categoryName": "Sides",
     "description": "Cabbage, Carrot, Nando&amp;#039;s Special Mayonnaise"
   },
   {
@@ -418,8 +418,8 @@
     "name": "Coleslaw (M) Large",
     "price": 220,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Sides",
+    "cuisineName": "Indian",
+    "categoryName": "Sides",
     "description": "Cabbage, Carrot, Nando&amp;#039;s Special Mayonnaise"
   },
   {
@@ -427,16 +427,16 @@
     "name": "Grilled Veg Regular",
     "price": 130,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Sides",
+    "cuisineName": "Indian",
+    "categoryName": "Sides",
     "description": "Grilled Assorted Vegetables"
   },
   {"id": "224513",
     "name": "Grilled Veg Large",
     "price": 220,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Sides",
+    "cuisineName": "Indian",
+    "categoryName": "Sides",
     "description": "Grilled Assorted Vegetables"
   },
   {
@@ -444,8 +444,8 @@
     "name": "Garlic Bread Regular",
     "price": 130,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Sides",
+    "cuisineName": "Indian",
+    "categoryName": "Sides",
     "description": "Toasted Garlic Flavored Bread"
   },
   {
@@ -453,8 +453,8 @@
     "name": "Garlic Bread Large",
     "price": 220,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Sides",
+    "cuisineName": "Indian",
+    "categoryName": "Sides",
     "description": "Toasted Garlic Flavored Bread"
   },
   {
@@ -462,8 +462,8 @@
     "name": "Portuguese Salad",
     "price": 245,
     "consumable": "1:1",
-    "cuisine_name": "Salad",
-    "category_name": "Salads",
+    "cuisineName": "Salad",
+    "categoryName": "Salads",
     "description": "Fresh Tomato, Nando&amp;#039;s Peri-Olives, Mixed Peppers, Cucumber and Onion on A Bed of Crisp Lettuce"
   },
   {
@@ -471,8 +471,8 @@
     "name": "Mediterranean Salad",
     "price": 350,
     "consumable": "1:1",
-    "cuisine_name": "Salad",
-    "category_name": "Salads",
+    "cuisineName": "Salad",
+    "categoryName": "Salads",
     "description": "Piccolo Tomato, Cucumber, Sweet Peppers and Mixed Leaves. Sprinkled with Olives and Feta Cheese"
   },
   {
@@ -480,8 +480,8 @@
     "name": "Caesar Salad (M)",
     "price": 245,
     "consumable": "1:1",
-    "cuisine_name": "Salad",
-    "category_name": "Salads",
+    "cuisineName": "Salad",
+    "categoryName": "Salads",
     "description": "Cos Lettuce Sprinkled with Parmesan Cheese, Caesar Dressing and Crunchy Croutons"
   },
   {
@@ -489,8 +489,8 @@
     "name": "Cataplana Algarve",
     "price": 795,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Try someting new",
+    "cuisineName": "Indian",
+    "categoryName": "Try someting new",
     "description": "PERi-PERi Chicken Thighs, Mixed Peppers, Chickpeas, Spicy Rice and Cataplana Sauce"
   },
   {
@@ -498,8 +498,8 @@
     "name": "Chicken Wrap (Y) On its own",
     "price": 335,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Indian",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "A Lightly Toasted Wrap, Generously Filled With Tender Chicken, Chili Jam, Green Leaf Lettuce and Tangy Yoghurt Sauce"
   },
   {
@@ -507,8 +507,8 @@
     "name": "Chicken Wrap (Y) With 1 Regular Side",
     "price": 435,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Indian",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "A Lightly Toasted Wrap, Generously Filled With Tender Chicken, Chili Jam, Green Leaf Lettuce and Tangy Yoghurt Sauce"
   },
   {
@@ -516,8 +516,8 @@
     "name": "Chicken Wrap (Y) With 2 Regular Sides",
     "price": 525,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Indian",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "A Lightly Toasted Wrap, Generously Filled With Tender Chicken, Chili Jam, Green Leaf Lettuce and Tangy Yoghurt Sauce"
   },
   {
@@ -525,8 +525,8 @@
     "name": "Chicken Breast Burger (M) On its own",
     "price": 335,
     "consumable": "1:1",
-    "cuisine_name": "Burger",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Burger",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "Served on A Toasted Portuguese Roll with Fresh Rocket, Tomato, Pickled Red Onions and Perinaise"
   },
   {
@@ -534,8 +534,8 @@
     "name": "Chicken Breast Burger (M) With 1 Regular Side",
     "price": 435,
     "consumable": "1:1",
-    "cuisine_name": "Burger",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Burger",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "Served on A Toasted Portuguese Roll with Fresh Rocket, Tomato, Pickled Red Onions and Perinaise"
   },
   {
@@ -543,8 +543,8 @@
     "name": "Chicken Breast Burger (M) With 2 Regular Sides",
     "price": 525,
     "consumable": "1:1",
-    "cuisine_name": "Burger",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Burger",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "Served on A Toasted Portuguese Roll with Fresh Rocket, Tomato, Pickled Red Onions and Perinaise"
   },
   {
@@ -552,8 +552,8 @@
     "name": "Chicken Caesar Wrap (M) On its own",
     "price": 335,
     "consumable": "1:1",
-    "cuisine_name": "Fast Food",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Fast Food",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "Served in A Toasted Wrap Full Of PERi-PERi Chicken, Crunchy Croutons, Parmesan Cheese and Sundried Tomatoes, All Smothered in Creamy Caesar Dressing"
   },
   {
@@ -561,8 +561,8 @@
     "name": "Chicken Caesar Wrap (M) With 1 Regular Side",
     "price": 435,
     "consumable": "1:1",
-    "cuisine_name": "Fast Food",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Fast Food",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "Served in A Toasted Wrap Full Of PERi-PERi Chicken, Crunchy Croutons, Parmesan Cheese and Sundried Tomatoes, All Smothered in Creamy Caesar Dressing"
   },
   {
@@ -570,8 +570,8 @@
     "name": "Chicken Caesar Wrap (M) With 2 Regular Sides",
     "price": 525,
     "consumable": "1:1",
-    "cuisine_name": "Fast Food",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Fast Food",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "Served in A Toasted Wrap Full Of PERi-PERi Chicken, Crunchy Croutons, Parmesan Cheese and Sundried Tomatoes, All Smothered in Creamy Caesar Dressing"
   },
   {
@@ -579,8 +579,8 @@
     "name": "Chicken Pita (M) On its own",
     "price": 335,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Indian",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "Served in A Lightly Toasted Pita, Stuffed With Chicken Tenders, Crisp Veggie Salad and Creamy Whip"
   },
   {
@@ -588,8 +588,8 @@
     "name": "Chicken Pita (M) With 1 Regular Side",
     "price": 435,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Indian",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "Served in A Lightly Toasted Pita, Stuffed With Chicken Tenders, Crisp Veggie Salad and Creamy Whip"
   },
   {
@@ -597,8 +597,8 @@
     "name": "Chicken Pita (M) With 2 Regular Sides",
     "price": 525,
     "consumable": "1:1",
-    "cuisine_name": "Indian",
-    "category_name": "Burgers, pitas, wraps",
+    "cuisineName": "Indian",
+    "categoryName": "Burgers, pitas, wraps",
     "description": "Served in A Lightly Toasted Pita, Stuffed With Chicken Tenders, Crisp Veggie Salad and Creamy Whip"
   }
 ]

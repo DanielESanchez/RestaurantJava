@@ -14,4 +14,12 @@ public class GetDataTable {
         List<Table> list = Arrays.asList(mapper.readValue(data, Table[].class));
         return list;
     }
+
+    public int getAvailableTables(List<Table> tables){
+        int availableTables = 0;
+        for(Table table : tables){
+            if(table.getIsEmpty()) availableTables++;
+        }
+        return availableTables;
+    }
 }

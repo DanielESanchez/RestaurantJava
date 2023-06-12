@@ -9,4 +9,9 @@ public class Table {
     public boolean getIsEmpty() {
         return isEmpty;
     }
+
+    public void changeStatusTable(){
+        this.isEmpty = !this.isEmpty;
+    }
+
 }

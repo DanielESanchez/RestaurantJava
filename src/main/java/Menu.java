@@ -3,8 +3,8 @@ public class Menu {
     private String name;
     private float price;
     private String consumable;
-    private String cuisine_name;
-    private String category_name;
+    private String cuisineName;
+    private String categoryName;
     private String description;
 
     public String getId() {
@@ -23,12 +23,12 @@ public class Menu {
         return consumable;
     }
 
-    public String getCuisine_name() {
-        return cuisine_name;
+    public String getCuisineName() {
+        return cuisineName;
     }
 
-    public String getCategory_name() {
-        return category_name;
+    public String getCategoryName() {
+        return categoryName;
     }
 
     public String getDescription() {
