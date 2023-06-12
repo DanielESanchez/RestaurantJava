@@ -1,4 +1,4 @@
-public class Menu {
+public class MenuItem {
     private String id;
     private String name;
     private float price;

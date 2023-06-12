@@ -6,19 +6,19 @@ import java.util.*;
 public class GetDataMenu {
     private static final String fileName = "menu.json";
 
-    public List<Menu> getData() throws IOException {
+    public List<MenuItem> getData() throws IOException {
         GetFileData app = new GetFileData();
         ObjectMapper mapper = new ObjectMapper();
         String data = app.getFileFromResourceAsStream(this.fileName);
-        List<Menu> list = Arrays.asList(mapper.readValue(data, Menu[].class));
+        List<MenuItem> list = Arrays.asList(mapper.readValue(data, MenuItem[].class));
         return list;
     }
 
 
-    public List<String> getAvailableCategories(List<Menu> fullMenu){
+    public List<String> getAvailableCategories(List<MenuItem> fullMenuItems){
         List<String> availableCategories = new ArrayList<>();
-        for(Menu menu: fullMenu){
-            String categoryFromFullMenu = menu.getCategoryName();
+        for(MenuItem menuItem : fullMenuItems){
+            String categoryFromFullMenu = menuItem.getCategoryName();
             availableCategories.add(categoryFromFullMenu);
         }
         Set<String> setOfCategories = new HashSet<>(availableCategories);
@@ -27,12 +27,12 @@ public class GetDataMenu {
         return availableCategories;
     }
 
-    public List<Menu> getMenuByCategoryName(List<Menu> fullMenu, String categoryToSearch){
-        List<Menu> menByCategory = new ArrayList<>();
-        for(Menu menu: fullMenu){
-            String categoryFromMenu = menu.getCategoryName();
+    public List<MenuItem> getMenuByCategoryName(List<MenuItem> fullMenuItems, String categoryToSearch){
+        List<MenuItem> menByCategory = new ArrayList<>();
+        for(MenuItem menuItem : fullMenuItems){
+            String categoryFromMenu = menuItem.getCategoryName();
             if(categoryFromMenu.equals(categoryToSearch)){
-                menByCategory.add(menu);
+                menByCategory.add(menuItem);
             }
         }
         return menByCategory;

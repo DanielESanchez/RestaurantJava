@@ -2,6 +2,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,10 +16,10 @@ public class GetDataTable {
         return list;
     }
 
-    public int getAvailableTables(List<Table> tables){
-        int availableTables = 0;
+    public List<Table> getAvailableTables(List<Table> tables){
+        List<Table> availableTables = new ArrayList<>();
         for(Table table : tables){
-            if(table.getIsEmpty()) availableTables++;
+            if(table.getIsEmpty()) availableTables.add(table);
         }
         return availableTables;
     }

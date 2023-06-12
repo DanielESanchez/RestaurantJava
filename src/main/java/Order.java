@@ -2,24 +2,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private List<MenuOrder> orderList;
+    private List<OrderItem> orderList;
     private Employee waiterAssigned;
-    private boolean isCompleted;
+    private boolean isCompleted = false;
 
+    private Table table;
 
-    public void setOrderList() {
+    public Order(Employee waiterAssigned, Table table){
         this.orderList = new ArrayList<>();
+        this.waiterAssigned = waiterAssigned;
+        this.table = table;
     }
 
-    public void addItemToOrder(MenuOrder menuItem){
-        this.orderList.add(menuItem);
+    public void changeStatusCompleted() {
+        this.isCompleted = !this.isCompleted;
+    }
+
+    public void addItemToOrder(OrderItem orderItem){
+        this.orderList.add(orderItem);
     }
 
     public boolean getIsCompleted() {
         return isCompleted;
     }
 
-    public List<MenuOrder> getOrderList(){
+    public List<OrderItem> getOrderList(){
         return this.orderList;
+    }
+
+    public Table getTable() {
+        return table;
     }
 }
