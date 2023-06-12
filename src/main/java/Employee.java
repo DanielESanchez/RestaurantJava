@@ -22,4 +22,8 @@ public class Employee extends Person {
     public float getSalary() {
         return salary;
     }
+
+    public void setWorking(boolean working) {
+        isWorking = working;
+    }
 }

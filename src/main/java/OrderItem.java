@@ -1,10 +1,12 @@
-public class OrderItem extends MenuItem {
+public class OrderItem {
+    private MenuItem menuItem;
     private boolean isBeingCooked;
     private Employee chefAssigned;
     private boolean isCompleted =false;
 
-     public OrderItem(){
+     public OrderItem(Employee chefAssigned, MenuItem menuItem){
         super();
+        this.menuItem = menuItem;
     }
 
     public boolean isBeingCooked() {
@@ -19,8 +21,8 @@ public class OrderItem extends MenuItem {
         return isCompleted;
     }
 
-    public void setBeingCooked(boolean beingCooked) {
-        isBeingCooked = beingCooked;
+    public void changeStatusBeingCooked() {
+        isBeingCooked = !isBeingCooked;
     }
 
     public void setChefAssigned(Employee chefAssigned) {

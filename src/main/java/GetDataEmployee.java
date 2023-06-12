@@ -1,8 +1,5 @@
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,8 +13,9 @@ public class GetDataEmployee {
         return list;
     }
 
-    public Employee getEmployeeToAssign(List<Employee> employees, String jobToFind){
-        Employee employeeToAssign = employees.get(0);
+    public Employee getEmployeeToAssign(List<Employee> employees, String jobToFind, int employeesCount){
+        int randomNumber = (int)(Math.random() * employeesCount );
+        Employee employeeToAssign = employees.get(randomNumber);
         for(Employee employee : employees){
             if(!employee.getIsWorking() && employee.getJob().equals(jobToFind)){
                 employeeToAssign = employee;

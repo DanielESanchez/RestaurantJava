@@ -1,42 +1,42 @@
 [
   {
     "tableNumber": 1,
-    "isEmpty": false
+    "isEmpty": true
   },
   {
     "tableNumber": 2,
-    "isEmpty": false
+    "isEmpty": true
   },
   {
     "tableNumber": 3,
-    "isEmpty": false
+    "isEmpty": true
   },
   {
     "tableNumber": 4,
-    "isEmpty": false
+    "isEmpty": true
   },
   {
     "tableNumber": 5,
-    "isEmpty": false
+    "isEmpty": true
   },
   {
     "tableNumber": 6,
-    "isEmpty": false
+    "isEmpty": true
   },
   {
     "tableNumber": 7,
-    "isEmpty": false
+    "isEmpty": true
   },
   {
     "tableNumber": 8,
-    "isEmpty": false
+    "isEmpty": true
   },
   {
     "tableNumber": 9,
-    "isEmpty": false
+    "isEmpty": true
   },
   {
     "tableNumber": 10,
-    "isEmpty": false
+    "isEmpty": true
   }
 ]
