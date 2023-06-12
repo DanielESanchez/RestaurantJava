@@ -154,7 +154,78 @@ public class RestaurantProgram {
                 System.out.println(COMPLETED_MESSAGE);
             }
             else if(answerOption.equals("3")){
-                System.out.println(COMPLETED_MESSAGE);
+                if(orders.size()<1){
+                    System.out.println(NO_ORDES_AVAILABLE);
+                    keepRunningProgram = in.nextLine();
+                    continue;
+                }
+                String regexDigit = "\\d+";
+                Order selectedOrder;
+                System.out.println("--------------------------------");
+                System.out.println("Select an order to start billing process from the list below: ");
+                for (Order order: orders){
+                    int orderNumber = orders.indexOf(order) + 1;
+                    System.out.println("Write " + orderNumber + " to choose Table Number " + order.getTable().getTableNumber());
+                }
+                String selectedOrderIndex = in.nextLine();
+                boolean selectedOrderIsNumber = selectedOrderIndex.matches(regexDigit);
+                if(!selectedOrderIsNumber){
+                    System.out.println(CLOSE_MESSAGE);
+                    keepRunningProgram = in.nextLine();
+                    continue;
+                }
+                int selectedOrderIndexInt = Integer.parseInt(selectedOrderIndex);
+                if(selectedOrderIndexInt > orders.size() || selectedOrderIndexInt < 1){
+                    System.out.println(CLOSE_MESSAGE);
+                    keepRunningProgram = in.nextLine();
+                    continue;
+                }
+                selectedOrder = orders.get( selectedOrderIndexInt-1 );
+                System.out.println("Write the first name of the customer");
+                String firstName = in.nextLine();
+                System.out.println("Write the last name of the customer");
+                String lastName = in.nextLine();
+                System.out.println("Write the email of the customer");
+                String email = in.nextLine();
+                System.out.println("Write the age of the customer");
+                String ageString = in.nextLine();
+                while(!ageString.matches(regexDigit)){
+                    System.out.println("Please write a number for the customer's age");
+                    ageString = in.nextLine();
+                }
+                int ageInt = Integer.parseInt(ageString);
+                System.out.println("Write the phone number of the customer");
+                String phoneNumber = in.nextLine();
+                System.out.println("Write the TaxID of the customer");
+                String taxId = in.nextLine();
+                Customer customer = new Customer(ageInt);
+                customer.setName(firstName);
+                customer.setLastName(lastName);
+                customer.setTaxId(taxId);
+                customer.setAge(ageInt);
+                customer.setEmail(email);
+                customer.setPhone(phoneNumber);
+                Bill bill = new Bill(selectedOrder.getOrderList(), selectedOrder.getTable(), customer, 0);
+                System.out.println(bill.generateBill() + "\nwas the bill paid? y/n");
+                String wasPaid = in.nextLine().toLowerCase();
+                if(!wasPaid.equals("y") && !wasPaid.equals("n")){
+                    System.out.println(CLOSE_MESSAGE);
+                    keepRunningProgram = in.nextLine();
+                    continue;
+                }
+                if(wasPaid.equals("n")){
+                    System.out.println("Bill was not paid, you can add more items to the order or start again billing process"  +
+                            "If you want to close the program press ENTER, " +
+                            "else write anything to start again");
+                    keepRunningProgram = in.nextLine();
+                    continue;
+                }
+                int indexTable = tables.indexOf(selectedOrder.getTable());
+                orders.remove(selectedOrderIndexInt-1);
+                tables.get(indexTable).changeStatusTable();
+                System.out.println("Payment process successfully completed" +
+                        "If you want to close the program press ENTER, " +
+                        "else write anything to start again");
             }
             else{
                 System.out.println(CLOSE_MESSAGE);

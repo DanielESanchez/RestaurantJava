@@ -1,26 +1,25 @@
 import java.util.Date;
 
 public class Customer extends Person{
-    private String visitDate;
+    private String taxId;
     private boolean isSenior;
 
-    public Customer(){
+    public Customer(int age){
         super();
+        this.setAge(age);
         this.isSenior = (this.getAge() > 65) ? true: false;
-        this.setVisitDate();
     }
 
-    private void setVisitDate() {
-        String actualDateString = new Date().toString();
-        this.visitDate = actualDateString;
-    }
-
-    public String getVisitDate(){
-        return this.visitDate;
-    }
 
     public boolean getIsSenior(){
         return this.isSenior;
     }
 
+    public String getTaxId() {
+        return taxId;
+    }
+
+    public void setTaxId(String taxId) {
+        this.taxId = taxId;
+    }
 }

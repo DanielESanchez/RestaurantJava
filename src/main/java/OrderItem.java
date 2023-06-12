@@ -28,4 +28,8 @@ public class OrderItem {
     public void setChefAssigned(Employee chefAssigned) {
         this.chefAssigned = chefAssigned;
     }
+
+    public MenuItem getMenuItem() {
+        return menuItem;
+    }
 }
