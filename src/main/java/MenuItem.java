@@ -7,6 +7,16 @@ public class MenuItem {
     private String categoryName;
     private String description;
 
+    public Menu(String id, String name, float price, String consumable, String cuisineName, String categoryName, String description) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.consumable = consumable;
+        this.cuisineName = cuisineName;
+        this.categoryName = categoryName;
+        this.description = description;
+    }
+
     public String getId() {
         return id;
     }
@@ -34,4 +44,7 @@ public class MenuItem {
     public String getDescription() {
         return description;
     }
+
+
 }
+
