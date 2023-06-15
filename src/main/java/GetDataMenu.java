@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class GetDataMenu {
-    private static final String fileName = "menu.json";
+    private static final String fileName = StaticStrings.MENU_FILE_NAME;
 
     public List<MenuItem> getData() throws IOException {
         GetFileData app = new GetFileData();

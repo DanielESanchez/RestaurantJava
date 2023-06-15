@@ -33,4 +33,8 @@ public class Order {
     public Table getTable() {
         return table;
     }
+
+    public Employee getWaiterAssigned() {
+        return waiterAssigned;
+    }
 }

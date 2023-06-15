@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GetDataTable {
-    private static final String fileName = "table.json";
+    private static final String fileName = StaticStrings.TABLE_FILE_NAME;
     public List<Table> getData() throws IOException {
         GetFileData app = new GetFileData();
         ObjectMapper mapper = new ObjectMapper();

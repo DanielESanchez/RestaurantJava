@@ -2,23 +2,25 @@ import java.util.Date;
 import java.util.List;
 
 public class Bill {
-    private Date dateBill;
+    private final Date dateBill;
     private float subtotal = 0;
     private int taxesPercentage = 15;
     private float taxesTotal;
     private int discount;
     private float discountTotal;
     private float total;
-    private List<OrderItem> items;
-    private Table table;
-    private Customer customer;
+    private final List<OrderItem> items;
+    private final Table table;
+    private final Customer customer;
+    private final Employee cashier;
 
-    public Bill( List<OrderItem> items, Table table, Customer customer, int discount) {
+    public Bill( List<OrderItem> items, Table table, Customer customer, int discount, Employee cashier) {
         this.dateBill = new Date();
         this.discount = discount;
         this.items = items;
         this.table = table;
         this.customer = customer;
+        this.cashier = cashier;
         if(this.customer.getIsSenior()){
             this.discount += 15;
         }
@@ -34,32 +36,35 @@ public class Bill {
         this.calculateTotal();
         return """
                 -------------------------
-                Date %s 
-                Name: %s 
+                Date %s
+                Name: %s
                 TaxID: %s
-                Table: %s\n
-                Products: 
+                Table: %s
+                
+                Products:
                 -------------------------
-                %s 
-                Subtotal: %s 
-                Taxes: %s 
-                Discount: %s 
-                Total: %s \n
+                %s
+                Subtotal: %s
+                Taxes: %s
+                Discount: %s
+                Total: %s
+                
                 -------------------------
+                Cashier: %s
                 """.formatted(
                         this.dateBill.toString(), this.customer.getFullName(),
                         this.customer.getTaxId(), this.table.getTableNumber(),
                         this.getStringProducts(), this.subtotal, this.taxesTotal,
-                        this.discountTotal, this.total
+                        this.discountTotal, this.total, this.cashier.getFullName()
                 );
     }
 
     private String getStringProducts(){
-        String stringProductos = "";
+        StringBuilder stringProducts = new StringBuilder();
         for(OrderItem orderItem: items){
-            stringProductos += orderItem.getMenuItem().getName() + "   " + orderItem.getMenuItem().getPrice() + " $\n";
+            stringProducts.append(orderItem.getMenuItem().getName()).append("   ").append(orderItem.getMenuItem().getPrice()).append(" $\n");
         }
-        return stringProductos;
+        return stringProducts.toString();
     }
 
     private void calculateSubtotal(){
@@ -69,8 +74,6 @@ public class Bill {
     }
 
     private void calculateTaxes(){
-        System.out.println(this.subtotal);
-        System.out.println((this.taxesPercentage / 100));
         this.taxesTotal = this.subtotal * (this.taxesPercentage / (float)100);
     }
 

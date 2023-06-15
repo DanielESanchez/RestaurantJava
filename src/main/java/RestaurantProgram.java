@@ -4,235 +4,268 @@ import java.util.List;
 import java.util.Scanner;
 
 public class RestaurantProgram {
-
-    private static final String WELCOME_MESSAGE = "--------------------------------------------\n" +
-            "--------------------------------------------\n" +
-            "Restaurant System\n" +
-            "Choose an option from below and write the number to start the process\n" +
-            "1 - Assign table\n" +
-            "2 - Add To Order\n" +
-            "3 - Start Billing Process";
-    private static final String CLOSE_MESSAGE = "You did not write correct answer. " +
-            "If you want to close the program press ENTER, " +
-            "else write anything to start again";
-    private static final String COMPLETED_MESSAGE = "The process was completed. " +
-            "If you want to close the program press ENTER, " +
-            "else write anything to start again";
-    private static final String NO_TABLE_AVAILABLE = "There is no table available. If you want to close the program press ENTER, else write anything to start again";
-    private static final String NO_ORDES_AVAILABLE = "There is no order available. If you want to close the program press ENTER, else write anything to start again";
+    List<Employee> chefs;
+    List<Employee> cashiers;
+    List<Employee> waiters;
+    List<MenuItem> menuItems;
+    List<Table> tables;
+    List<Order> orders;
+    GetDataMenu getDataMenu;
+    GetDataEmployee getDataEmployee;
+    GetDataTable dataTable;
+    Scanner in;
 
     public static void main(String[] args) throws IOException {
+        RestaurantProgram restaurantProgram = new RestaurantProgram();
+        restaurantProgram.start();
+    }
 
-        GetDataPerson getDataPerson = new GetDataPerson();
-        GetDataMenu getDataMenu = new GetDataMenu();
-        GetDataEmployee getDataEmployee = new GetDataEmployee();
-        GetDataTable dataTable = new GetDataTable();
-        List<Employee> chefs =  getDataEmployee.getData("chef.json");
-        List<Employee> cashiers =  getDataEmployee.getData("cashier.json");
-        List<Employee> waiters =  getDataEmployee.getData("waiter.json");
-        List<MenuItem> menuItems = getDataMenu.getData();
-        List<Table> tables = dataTable.getData();
-        List<Order> orders = new ArrayList<>();
-        Scanner in = new Scanner(System.in);
-        String keepRunningProgram = "continue";
-        while(!keepRunningProgram.equals("")) {
-            System.out.println(WELCOME_MESSAGE);
+    protected void start() throws IOException {
+        String keepRunningProgram = StaticStrings.KEEP_RUNNING_PROGRAM_INITIAL;
+        getDataMenu = new GetDataMenu();
+        getDataEmployee = new GetDataEmployee();
+        dataTable = new GetDataTable();
+        chefs =  getDataEmployee.getData(StaticStrings.CHEF_FILE_NAME);
+        cashiers =  getDataEmployee.getData(StaticStrings.CASHIER_FILE_NAME);
+        waiters =  getDataEmployee.getData(StaticStrings.WAITER_FILE_NAME);
+        menuItems = getDataMenu.getData();
+        tables = dataTable.getData();
+        orders = new ArrayList<>();
+        in = new Scanner(System.in);
+        while(!keepRunningProgram.isBlank() || !keepRunningProgram.isEmpty()) {
+            System.out.println(StaticStrings.WELCOME_MESSAGE);
             String answerOption = in.nextLine();
-            if(answerOption.equals("1")){
-                List<Table> availableTables = dataTable.getAvailableTables(tables);
-                if(availableTables.size() < 1){
-                    System.out.println(NO_TABLE_AVAILABLE);
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-                System.out.println("Available Tables:");
-                for (Table table: availableTables){
-                    System.out.println(table.getTableNumber());
-                }
-                System.out.println("Please write a number from above to assign:");
-                String numberTableSelected = in.nextLine();
-                Table tableToAssign = null;
-                for (Table table: availableTables){
-                    if(numberTableSelected.equals( Integer.toString(table.getTableNumber())) ){
-                        tableToAssign = table;
-                        System.out.println("Table Assigned "+ table.getTableNumber());
-                        Employee waiterAssigned = getDataEmployee.getEmployeeToAssign(waiters, "waiter", waiters.size());
-                        System.out.println("Waiter Assigned "+ waiterAssigned.getName() + " " + waiterAssigned.getLastName());
-                        Order newOrder = new Order(waiterAssigned, tableToAssign);
-                        int indexEmployeeAssigned = waiters.indexOf(waiterAssigned);
-                        waiters.get(indexEmployeeAssigned).setWorking(true);
-                        orders.add(newOrder);
-                        int indexSelectedTable = tables.indexOf(table);
-                        tables.get(indexSelectedTable).changeStatusTable();
-                        System.out.println(COMPLETED_MESSAGE);
-                    }
-                }
-                if(tableToAssign == null){
-                    System.out.println(CLOSE_MESSAGE);
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-            }
-            else if(answerOption.equals("2")){
-                if(orders.size()<1){
-                    System.out.println(NO_ORDES_AVAILABLE);
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-                String regexDigit = "\\d+";
-                Order selectedOrder;
-                System.out.println("--------------------------------");
-                System.out.println("Select an order to update from the list below: ");
-                for (Order order: orders){
-                    int orderNumber = orders.indexOf(order) + 1;
-                    System.out.println("Write " + orderNumber + " to choose Table Number " + order.getTable().getTableNumber());
-                }
-                String selectedOrderIndex = in.nextLine();
-                boolean selectedOrderIsNumber = selectedOrderIndex.matches(regexDigit);
-                if(!selectedOrderIsNumber){
-                    System.out.println(CLOSE_MESSAGE);
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-                int selectedOrderIndexInt = Integer.parseInt(selectedOrderIndex);
-                if(selectedOrderIndexInt > orders.size() || selectedOrderIndexInt < 1){
-                    System.out.println(CLOSE_MESSAGE);
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-                selectedOrder = orders.get( selectedOrderIndexInt-1 );
-                System.out.println("You have chosen table: " + selectedOrder.getTable().getTableNumber());
-                List<String> availableCategories = getDataMenu.getAvailableCategories(menuItems);
-                System.out.println("--------------------------------");
-                System.out.println("Available Categories");
-                int categoryCount = 1;
-                for(String category: availableCategories){
-                    System.out.println(categoryCount++ + " " + category);
-                }
-                System.out.println("Write the number corresponding to the category you want to see: ");
-                String selectedCategory = in.nextLine();
-                String selectedCategoryName = "";
-                boolean categoryIsNumber = selectedCategory.matches(regexDigit);
-                if(!categoryIsNumber){
-                    System.out.println(CLOSE_MESSAGE);
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-                int selectedCategoryInt = Integer.parseInt(selectedCategory);
-                selectedCategoryName = availableCategories.get( selectedCategoryInt-1 );
-                System.out.println("--------------------------------");
-                System.out.println("Showing all menu items for: " + selectedCategoryName);
-                List<MenuItem> itemsByCategory = getDataMenu.getMenuByCategoryName(menuItems, selectedCategoryName);
-                for(MenuItem menuItem: itemsByCategory){
-                    System.out.println("--------------------------------");
-                    System.out.println("Id: " + menuItem.getId());
-                    System.out.println("Name: " + menuItem.getName());
-                    System.out.println("Description: " + menuItem.getDescription());
-                    System.out.println(menuItem.getPrice() + " $");
-                    System.out.println("--------------------------------");
-                }
-                System.out.println("Write the ID corresponding to the item you want to choose");
-                String itemToChoose = in.nextLine();
-                MenuItem selectedMenuItem = null;
-                for(MenuItem menuItem: itemsByCategory){
-                    if(itemToChoose.equals(menuItem.getId())){
-                        selectedMenuItem = menuItem;
-                        break;
-                    }
-                }
-                if(selectedMenuItem == null){
-                    System.out.println(CLOSE_MESSAGE);
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-                System.out.println("You added: " + selectedMenuItem.getName());
-                Employee chefAssigned = getDataEmployee.getEmployeeToAssign(chefs, "chef", chefs.size());
-                int indexChefAssigned = chefs.indexOf(chefAssigned);
-                chefs.get(indexChefAssigned).setWorking(true);
-                OrderItem orderItemToAdd = new OrderItem(chefAssigned, selectedMenuItem);
-                selectedOrder.addItemToOrder(orderItemToAdd);
-                System.out.println(COMPLETED_MESSAGE);
-            }
-            else if(answerOption.equals("3")){
-                if(orders.size()<1){
-                    System.out.println(NO_ORDES_AVAILABLE);
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-                String regexDigit = "\\d+";
-                Order selectedOrder;
-                System.out.println("--------------------------------");
-                System.out.println("Select an order to start billing process from the list below: ");
-                for (Order order: orders){
-                    int orderNumber = orders.indexOf(order) + 1;
-                    System.out.println("Write " + orderNumber + " to choose Table Number " + order.getTable().getTableNumber());
-                }
-                String selectedOrderIndex = in.nextLine();
-                boolean selectedOrderIsNumber = selectedOrderIndex.matches(regexDigit);
-                if(!selectedOrderIsNumber){
-                    System.out.println(CLOSE_MESSAGE);
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-                int selectedOrderIndexInt = Integer.parseInt(selectedOrderIndex);
-                if(selectedOrderIndexInt > orders.size() || selectedOrderIndexInt < 1){
-                    System.out.println(CLOSE_MESSAGE);
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-                selectedOrder = orders.get( selectedOrderIndexInt-1 );
-                System.out.println("Write the first name of the customer");
-                String firstName = in.nextLine();
-                System.out.println("Write the last name of the customer");
-                String lastName = in.nextLine();
-                System.out.println("Write the email of the customer");
-                String email = in.nextLine();
-                System.out.println("Write the age of the customer");
-                String ageString = in.nextLine();
-                while(!ageString.matches(regexDigit)){
-                    System.out.println("Please write a number for the customer's age");
-                    ageString = in.nextLine();
-                }
-                int ageInt = Integer.parseInt(ageString);
-                System.out.println("Write the phone number of the customer");
-                String phoneNumber = in.nextLine();
-                System.out.println("Write the TaxID of the customer");
-                String taxId = in.nextLine();
-                Customer customer = new Customer(ageInt);
-                customer.setName(firstName);
-                customer.setLastName(lastName);
-                customer.setTaxId(taxId);
-                customer.setAge(ageInt);
-                customer.setEmail(email);
-                customer.setPhone(phoneNumber);
-                Bill bill = new Bill(selectedOrder.getOrderList(), selectedOrder.getTable(), customer, 0);
-                System.out.println(bill.generateBill() + "\nwas the bill paid? y/n");
-                String wasPaid = in.nextLine().toLowerCase();
-                if(!wasPaid.equals("y") && !wasPaid.equals("n")){
-                    System.out.println(CLOSE_MESSAGE);
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-                if(wasPaid.equals("n")){
-                    System.out.println("Bill was not paid, you can add more items to the order or start again billing process"  +
-                            "If you want to close the program press ENTER, " +
-                            "else write anything to start again");
-                    keepRunningProgram = in.nextLine();
-                    continue;
-                }
-                int indexTable = tables.indexOf(selectedOrder.getTable());
-                orders.remove(selectedOrderIndexInt-1);
-                tables.get(indexTable).changeStatusTable();
-                System.out.println("Payment process successfully completed" +
-                        "If you want to close the program press ENTER, " +
-                        "else write anything to start again");
-            }
-            else{
-                System.out.println(CLOSE_MESSAGE);
+            switch (answerOption) {
+                case StaticStrings.ASSIGN_TABLE_OPTION ->
+                    assignTable();
+                case StaticStrings.ADD_TO_ORDER_OPTION ->
+                    addToOrder();
+                case StaticStrings.GET_ORDER_INFO_OPTION ->
+                    getOrderInfo();
+                case StaticStrings.START_BILLING_PROCESS_OPTION ->
+                    startBillingProcess();
+                default ->
+                    System.out.println(StaticStrings.CLOSE_MESSAGE_ERROR + StaticStrings.CLOSE_PROGRAM_MESSAGE);
             }
             keepRunningProgram = in.nextLine();
         }
+    }
 
+    protected void assignTable(){
+        List<Table> availableTables = dataTable.getAvailableTables(tables);
+        if (availableTables.size() < 1) {
+            System.out.println(StaticStrings.NO_TABLE_AVAILABLE + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        System.out.println(StaticStrings.AVAILABLE_TABLES_TITLE);
+        for (Table table : availableTables) {
+            System.out.println(table.getTableNumber());
+        }
+        System.out.println(StaticStrings.WRITE_NUMBER_TEXT);
+        String numberTableSelected = in.nextLine();
+        Table tableToAssign = null;
+        for (Table table : availableTables) {
+            if (numberTableSelected.equals(Integer.toString(table.getTableNumber()))) {
+                tableToAssign = table;
+                System.out.println(StaticStrings.TABLE_ASSIGNED + table.getTableNumber());
+                Employee waiterAssigned = getDataEmployee.getEmployeeToAssign(waiters, StaticStrings.WAITER_JOB_NAME, waiters.size());
+                System.out.println(StaticStrings.WAITER_ASSIGNED_TEXT + waiterAssigned.getFullName());
+                Order newOrder = new Order(waiterAssigned, tableToAssign);
+                int indexEmployeeAssigned = waiters.indexOf(waiterAssigned);
+                waiters.get(indexEmployeeAssigned).setWorking(true);
+                orders.add(newOrder);
+                int indexSelectedTable = tables.indexOf(table);
+                tables.get(indexSelectedTable).changeStatusTable();
+                System.out.println(StaticStrings.COMPLETED_MESSAGE + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            }
+        }
+        if (tableToAssign == null) {
+            System.out.println(StaticStrings.NO_SELECTED_TABLE + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+        }
+    }
+
+    protected void addToOrder(){
+        if (orders.size() < 1) {
+            System.out.println(StaticStrings.NO_ORDERS_AVAILABLE + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        Order selectedOrder;
+        System.out.println(StaticStrings.SELECT_TABLE_TITLE);
+        for (Order order : orders) {
+            int orderNumber = orders.indexOf(order) + 1;
+            System.out.printf(StaticStrings.CHOOSE_NUMBER_TABLE_TEXT, orderNumber, order.getTable().getTableNumber());
+        }
+        String selectedOrderIndex = in.nextLine();
+        boolean selectedOrderIsNumber = selectedOrderIndex.matches(StaticStrings.REG_EXP_FOR_NUMBER);
+        if (!selectedOrderIsNumber) {
+            System.out.println(StaticStrings.NO_NUMBER_RECEIVED + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        int selectedOrderIndexInt = Integer.parseInt(selectedOrderIndex);
+        if (selectedOrderIndexInt > orders.size() || selectedOrderIndexInt < 1) {
+            System.out.println(StaticStrings.ORDER_DOES_NOT_EXISTS + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        selectedOrder = orders.get(selectedOrderIndexInt - 1);
+        System.out.println(StaticStrings.CHOSEN_TABLE_TEXT + selectedOrder.getTable().getTableNumber());
+        List<String> availableCategories = getDataMenu.getAvailableCategories(menuItems);
+        System.out.println(StaticStrings.AVAILABLE_CATEGORIES_TITLE);
+        int categoryCount = 1;
+        for (String category : availableCategories) {
+            System.out.println(categoryCount++ + StaticStrings.SPACE_SEPARATOR + category);
+        }
+        System.out.println(StaticStrings.WRITE_NUMBER_CATEGORY);
+        String selectedCategory = in.nextLine();
+        boolean categoryIsNumber = selectedCategory.matches(StaticStrings.REG_EXP_FOR_NUMBER);
+        if (!categoryIsNumber) {
+            System.out.println(StaticStrings.NO_NUMBER_RECEIVED + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        int selectedCategoryInt = Integer.parseInt(selectedCategory);
+        if (selectedCategoryInt> availableCategories.size() || selectedCategoryInt < 1) {
+            System.out.println(StaticStrings.CATEGORY_DOES_NOT_EXISTS + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        String selectedCategoryName = availableCategories.get(selectedCategoryInt - 1);
+        System.out.printf(StaticStrings.SHOWING_ITEMS_MENU, selectedCategoryName);
+        List<MenuItem> itemsByCategory = getDataMenu.getMenuByCategoryName(menuItems, selectedCategoryName);
+        for (MenuItem menuItem : itemsByCategory) {
+            System.out.printf(StaticStrings.ITEM_MENU_FORMAT, menuItem.getId(), menuItem.getName(),
+                    menuItem.getDescription(), menuItem.getPrice()
+            );
+        }
+        System.out.println(StaticStrings.WRITE_ID_TO_CHOOSE_ITEM);
+        String itemToChoose = in.nextLine();
+        MenuItem selectedMenuItem = null;
+        for (MenuItem menuItem : itemsByCategory) {
+            if (itemToChoose.equals(menuItem.getId())) {
+                selectedMenuItem = menuItem;
+                break;
+            }
+        }
+        if (selectedMenuItem == null) {
+            System.out.println(StaticStrings.ITEM_DOES_NOT_EXISTS + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        System.out.println(StaticStrings.WRITE_QUANTITY_ORDER);
+        String quantityInput = in.nextLine();
+        boolean quantityInputIsNumber = quantityInput.matches(StaticStrings.REG_EXP_FOR_NUMBER);
+        if (!quantityInputIsNumber) {
+            System.out.println(StaticStrings.NO_NUMBER_RECEIVED + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        int quantity = Integer.parseInt(quantityInput);
+        System.out.printf(StaticStrings.ADDED_ITEM_TEXT, quantity, selectedMenuItem.getName());
+        Employee chefAssigned = getDataEmployee.getEmployeeToAssign(chefs, StaticStrings.CHEF_JOB_NAME, chefs.size());
+        int indexChefAssigned = chefs.indexOf(chefAssigned);
+        chefs.get(indexChefAssigned).setWorking(true);
+        OrderItem orderItemToAdd = new OrderItem(chefAssigned, selectedMenuItem);
+        orderItemToAdd.setQuantity(quantity);
+        selectedOrder.addItemToOrder(orderItemToAdd);
+        System.out.println(StaticStrings.COMPLETED_MESSAGE + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+    }
+
+    protected void getOrderInfo(){
+        if (orders.size() < 1) {
+            System.out.println(StaticStrings.NO_ORDERS_AVAILABLE + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        Order selectedOrder;
+        System.out.println(StaticStrings.SELECT_ITEM_TO_UPDATE);
+        for (Order order : orders) {
+            int orderNumber = orders.indexOf(order) + 1;
+            System.out.printf(StaticStrings.CHOOSE_NUMBER_TABLE_TEXT, orderNumber, order.getTable().getTableNumber());
+        }
+        String selectedOrderIndex = in.nextLine();
+        boolean selectedOrderIsNumber = selectedOrderIndex.matches(StaticStrings.REG_EXP_FOR_NUMBER);
+        if (!selectedOrderIsNumber) {
+            System.out.println(StaticStrings.NO_NUMBER_RECEIVED + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        int selectedOrderIndexInt = Integer.parseInt(selectedOrderIndex);
+        if (selectedOrderIndexInt > orders.size() || selectedOrderIndexInt < 1) {
+            System.out.println(StaticStrings.ORDER_DOES_NOT_EXISTS + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        selectedOrder = orders.get(selectedOrderIndexInt - 1);
+        if(selectedOrder.getOrderList().size()<1){
+            System.out.println(StaticStrings.ORDER_EMPTY + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        String completedStatus = (selectedOrder.getIsCompleted()) ? StaticStrings.COMPLETED_TEXT : StaticStrings.NOT_COMPLETED_TEXT;
+        System.out.printf(StaticStrings.INFO_ORDER_TOP, selectedOrder.getTable().getTableNumber(), selectedOrder.getWaiterAssigned().getFullName(), completedStatus);
+        int countItems = 1;
+        for(OrderItem orderItem : selectedOrder.getOrderList()){
+            String orderItemStatus = (orderItem.getIsCompleted()) ? StaticStrings.COMPLETED_TEXT : StaticStrings.NOT_COMPLETED_TEXT;
+            System.out.printf(StaticStrings.INFO_ORDER_BOTTOM, countItems++, orderItem.getMenuItem().getName(), orderItem.getQuantity(),
+                    orderItemStatus, orderItem.getChefAssigned().getFullName());
+        }
+        System.out.println(StaticStrings.CLOSE_PROGRAM_MESSAGE);
+    }
+
+    protected void startBillingProcess(){
+        if (orders.size() < 1) {
+            System.out.println(StaticStrings.NO_ORDERS_AVAILABLE + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        Order selectedOrder;
+        System.out.println(StaticStrings.SELECT_BILLING_ORDER);
+        for (Order order : orders) {
+            int orderNumber = orders.indexOf(order) + 1;
+            System.out.printf(StaticStrings.CHOOSE_NUMBER_TABLE_TEXT, orderNumber, order.getTable().getTableNumber());
+        }
+        String selectedOrderIndex = in.nextLine();
+        boolean selectedOrderIsNumber = selectedOrderIndex.matches(StaticStrings.REG_EXP_FOR_NUMBER);
+        if (!selectedOrderIsNumber) {
+            System.out.println(StaticStrings.NO_NUMBER_RECEIVED + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        int selectedOrderIndexInt = Integer.parseInt(selectedOrderIndex);
+        if (selectedOrderIndexInt > orders.size() || selectedOrderIndexInt < 1) {
+            System.out.println(StaticStrings.ORDER_DOES_NOT_EXISTS + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        selectedOrder = orders.get(selectedOrderIndexInt - 1);
+        System.out.printf(StaticStrings.WRITE_CUSTOMER_INFO_TEXT, StaticStrings.FIRST_NAME_LABEL);
+        String firstName = in.nextLine();
+        System.out.printf(StaticStrings.WRITE_CUSTOMER_INFO_TEXT, StaticStrings.LAST_NAME_LABEL);
+        String lastName = in.nextLine();
+        System.out.printf(StaticStrings.WRITE_CUSTOMER_INFO_TEXT, StaticStrings.EMAIL_LABEL);
+        String email = in.nextLine();
+        System.out.printf(StaticStrings.WRITE_CUSTOMER_INFO_TEXT, StaticStrings.AGE_LABEL);
+        String ageString = in.nextLine();
+        while (!ageString.matches(StaticStrings.REG_EXP_FOR_NUMBER)) {
+            System.out.println(StaticStrings.NO_NUMBER_FOR_AGE);
+            ageString = in.nextLine();
+        }
+        int ageInt = Integer.parseInt(ageString);
+        System.out.printf(StaticStrings.WRITE_CUSTOMER_INFO_TEXT, StaticStrings.PHONE_NUMBER_LABEL);
+        String phoneNumber = in.nextLine();
+        System.out.printf(StaticStrings.WRITE_CUSTOMER_INFO_TEXT, StaticStrings.TAX_NAME_LABEL);
+        String taxId = in.nextLine();
+        Customer customer = new Customer(ageInt);
+        customer.setName(firstName);
+        customer.setLastName(lastName);
+        customer.setTaxId(taxId);
+        customer.setAge(ageInt);
+        customer.setEmail(email);
+        customer.setPhone(phoneNumber);
+        Employee cashierAssigned = getDataEmployee.getEmployeeToAssign(cashiers, StaticStrings.CASHIER_JOB_NAME, cashiers.size());
+        Bill bill = new Bill(selectedOrder.getOrderList(), selectedOrder.getTable(), customer, 0, cashierAssigned);
+        System.out.println(bill.generateBill() + StaticStrings.BILL_PAID_QUESTION);
+        String wasPaid = in.nextLine().toLowerCase();
+        if (!wasPaid.equals(StaticStrings.YES_ANSWER) && !wasPaid.equals(StaticStrings.NO_ANSWER)) {
+            System.out.println(StaticStrings.CLOSE_MESSAGE_ERROR + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        if (wasPaid.equals(StaticStrings.NO_ANSWER)) {
+            System.out.println(StaticStrings.BILL_NOT_PAID + StaticStrings.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
+        int indexTable = tables.indexOf(selectedOrder.getTable());
+        orders.remove(selectedOrderIndexInt - 1);
+        tables.get(indexTable).changeStatusTable();
+        System.out.println(StaticStrings.PAYMENT_COMPLETED + StaticStrings.CLOSE_PROGRAM_MESSAGE);
     }
 
 }

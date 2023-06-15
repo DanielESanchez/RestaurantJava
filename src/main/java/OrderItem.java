@@ -3,10 +3,12 @@ public class OrderItem {
     private boolean isBeingCooked;
     private Employee chefAssigned;
     private boolean isCompleted =false;
+    private int quantity;
 
      public OrderItem(Employee chefAssigned, MenuItem menuItem){
         super();
         this.menuItem = menuItem;
+        this.chefAssigned = chefAssigned;
     }
 
     public boolean isBeingCooked() {
@@ -31,5 +33,13 @@ public class OrderItem {
 
     public MenuItem getMenuItem() {
         return menuItem;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
