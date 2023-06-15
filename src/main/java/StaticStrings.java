@@ -92,5 +92,6 @@ public class StaticStrings {
     public static final String ADD_TO_ORDER_OPTION = "2";
     public static final String GET_ORDER_INFO_OPTION = "3";
     public static final String START_BILLING_PROCESS_OPTION = "4";
+    public static final int DEFAULT_BUFFER_SIZE = 8192;
 
 }
