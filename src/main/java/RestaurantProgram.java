@@ -227,6 +227,10 @@ public class RestaurantProgram {
             return;
         }
         selectedOrder = orders.get(selectedOrderIndexInt - 1);
+        if(selectedOrder.getOrderList().size()<1){
+            System.out.println(StaticVariables.ORDER_EMPTY + StaticVariables.CLOSE_PROGRAM_MESSAGE);
+            return;
+        }
         System.out.printf(StaticVariables.WRITE_CUSTOMER_INFO_TEXT, StaticVariables.FIRST_NAME_LABEL);
         String firstName = in.nextLine();
         System.out.printf(StaticVariables.WRITE_CUSTOMER_INFO_TEXT, StaticVariables.LAST_NAME_LABEL);
