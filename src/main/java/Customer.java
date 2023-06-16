@@ -6,7 +6,7 @@ public class Customer extends Person{
     public Customer(int age){
         super();
         this.setAge(age);
-        this.isSenior = (this.getAge() > 65) ? true: false;
+        this.isSenior = (this.getAge() >= StaticVariables.SENIOR_AGE) ? true: false;
     }
 
 

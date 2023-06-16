@@ -1,4 +1,3 @@
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -7,13 +6,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GetDataTable {
-    private static final String fileName = StaticStrings.TABLE_FILE_NAME;
+    GetFileData getFileData;
+    private static final String fileName = StaticVariables.TABLE_FILE_NAME;
+    public GetDataTable(GetFileData getFileData){
+        this.getFileData = getFileData;
+    }
     public List<Table> getData() throws IOException {
-        GetFileData app = new GetFileData();
         ObjectMapper mapper = new ObjectMapper();
-        String data = app.getFileFromResourceAsStream(fileName);
-        List<Table> list = Arrays.asList(mapper.readValue(data, Table[].class));
-        return list;
+        String data = getFileData.getFileFromResourceAsStream(fileName);
+        return Arrays.asList(mapper.readValue(data, Table[].class));
     }
 
     public List<Table> getAvailableTables(List<Table> tables){

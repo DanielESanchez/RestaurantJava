@@ -3,9 +3,9 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class GetFileData {
-    private static final String CHARSET = StaticStrings.CHARSET;
-    private static final String FILE_NOT_FOUND_STRING = StaticStrings.FILE_NOT_FOUND;
-    public static final int DEFAULT_BUFFER_SIZE = StaticStrings.DEFAULT_BUFFER_SIZE;
+    private static final String CHARSET = StaticVariables.CHARSET;
+    private static final String FILE_NOT_FOUND_STRING = StaticVariables.FILE_NOT_FOUND;
+    public static final int DEFAULT_BUFFER_SIZE = StaticVariables.DEFAULT_BUFFER_SIZE;
     public String getFileFromResourceAsStream(String fileName) throws IOException{
         ClassLoader classLoader = getClass().getClassLoader();
         InputStream inputStream = classLoader.getResourceAsStream(fileName);

@@ -1,4 +1,22 @@
-public class StaticStrings {
+public class StaticVariables {
+    public static final String BILL_FORMAT = """
+            -------------------------
+            Date %s
+            Name: %s
+            TaxID: %s
+            Table: %s
+            
+            Products:
+            -------------------------
+            %s
+            Subtotal: %s
+            Taxes: %s
+            Discount: %s
+            Total: %s
+            
+            -------------------------
+            Cashier: %s
+            """;
     public static final String WELCOME_MESSAGE = """
             --------------------------------------------
             --------------------------------------------
@@ -93,5 +111,8 @@ public class StaticStrings {
     public static final String GET_ORDER_INFO_OPTION = "3";
     public static final String START_BILLING_PROCESS_OPTION = "4";
     public static final int DEFAULT_BUFFER_SIZE = 8192;
+    public static final int EMPLOYEE_DISCOUNT = 5;
+    public static final int SENIOR_DISCOUNT = 15;
+    public static final int SENIOR_AGE = 65;
 
 }

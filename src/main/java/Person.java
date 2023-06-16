@@ -108,4 +108,12 @@ public class Person {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public void setRegistered(String registered) {
+        this.registered = registered;
+    }
 }

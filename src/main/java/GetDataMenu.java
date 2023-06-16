@@ -4,12 +4,15 @@ import java.io.IOException;
 import java.util.*;
 
 public class GetDataMenu {
-    private static final String fileName = StaticStrings.MENU_FILE_NAME;
+    GetFileData getFileData;
+    private static final String fileName = StaticVariables.MENU_FILE_NAME;
+    public GetDataMenu(GetFileData getFileData){
+        this.getFileData = getFileData;
+    }
 
     public List<MenuItem> getData() throws IOException {
-        GetFileData app = new GetFileData();
         ObjectMapper mapper = new ObjectMapper();
-        String data = app.getFileFromResourceAsStream(this.fileName);
+        String data = getFileData.getFileFromResourceAsStream(this.fileName);
         List<MenuItem> list = Arrays.asList(mapper.readValue(data, MenuItem[].class));
         return list;
     }

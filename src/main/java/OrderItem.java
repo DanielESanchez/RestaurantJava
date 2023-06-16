@@ -27,10 +27,6 @@ public class OrderItem {
         isBeingCooked = !isBeingCooked;
     }
 
-    public void setChefAssigned(Employee chefAssigned) {
-        this.chefAssigned = chefAssigned;
-    }
-
     public MenuItem getMenuItem() {
         return menuItem;
     }

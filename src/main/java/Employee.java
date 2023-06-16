@@ -1,4 +1,4 @@
-public class Employee extends Person {
+public abstract class Employee extends Person {
     private String job;
     private String  hireDate;
     private boolean isWorking;
@@ -7,23 +7,13 @@ public class Employee extends Person {
         super();
     }
 
-    public String getJob() {
-        return job;
-    }
+    public abstract String getJob();
 
-    public String getHireDate() {
-        return hireDate;
-    }
+    public abstract String getHireDate();
 
-    public boolean getIsWorking() {
-        return isWorking;
-    }
+    public abstract boolean getIsWorking();
 
-    public float getSalary() {
-        return salary;
-    }
+    public abstract float getSalary();
 
-    public void setWorking(boolean working) {
-        isWorking = working;
-    }
+    public abstract void setWorking(boolean working);
 }

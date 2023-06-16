@@ -22,10 +22,10 @@ public class Bill {
         this.customer = customer;
         this.cashier = cashier;
         if(this.customer.getIsSenior()){
-            this.discount += 15;
+            this.discount += StaticVariables.SENIOR_DISCOUNT;
         }
         if(this.customer.getIsEmployee()){
-            this.discount += 5;
+            this.discount += StaticVariables.EMPLOYEE_DISCOUNT;
         }
     }
 
@@ -34,24 +34,7 @@ public class Bill {
         this.calculateTaxes();
         this.calculateDiscount();
         this.calculateTotal();
-        return """
-                -------------------------
-                Date %s
-                Name: %s
-                TaxID: %s
-                Table: %s
-                
-                Products:
-                -------------------------
-                %s
-                Subtotal: %s
-                Taxes: %s
-                Discount: %s
-                Total: %s
-                
-                -------------------------
-                Cashier: %s
-                """.formatted(
+        return StaticVariables.BILL_FORMAT.formatted(
                         this.dateBill.toString(), this.customer.getFullName(),
                         this.customer.getTaxId(), this.table.getTableNumber(),
                         this.getStringProducts(), this.subtotal, this.taxesTotal,
