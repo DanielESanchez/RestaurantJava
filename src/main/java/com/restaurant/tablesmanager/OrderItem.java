@@ -1,3 +1,5 @@
+package com.restaurant.tablesmanager;
+
 public class OrderItem {
     private MenuItem menuItem;
     private boolean isBeingCooked;

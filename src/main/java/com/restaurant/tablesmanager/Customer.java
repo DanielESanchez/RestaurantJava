@@ -1,3 +1,4 @@
+package com.restaurant.tablesmanager;
 
 public class Customer extends Person{
     private String taxId;

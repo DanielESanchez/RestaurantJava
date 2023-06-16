@@ -1,3 +1,5 @@
+package com.restaurant.tablesmanager;
+
 public class Table {
     private int tableNumber;
     private boolean isEmpty;

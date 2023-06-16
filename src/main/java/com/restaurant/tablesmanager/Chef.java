@@ -1,3 +1,5 @@
+package com.restaurant.tablesmanager;
+
 public class Chef extends Employee{
     private String job;
     private String  hireDate;

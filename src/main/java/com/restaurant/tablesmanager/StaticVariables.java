@@ -1,3 +1,5 @@
+package com.restaurant.tablesmanager;
+
 public class StaticVariables {
     public static final String BILL_FORMAT = """
             -------------------------

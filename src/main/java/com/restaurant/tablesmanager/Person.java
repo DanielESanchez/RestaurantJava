@@ -1,3 +1,5 @@
+package com.restaurant.tablesmanager;
+
 public class Person {
     private String id;
     private int index;

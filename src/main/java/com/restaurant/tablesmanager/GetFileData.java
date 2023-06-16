@@ -1,3 +1,5 @@
+package com.restaurant.tablesmanager;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;

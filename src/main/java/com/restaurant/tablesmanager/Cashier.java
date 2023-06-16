@@ -1,10 +1,11 @@
-public class Waiter extends Employee{
+package com.restaurant.tablesmanager;
+
+public class Cashier extends Employee{
     private String job;
     private String  hireDate;
     private boolean isWorking;
     private float salary;
-
-    public Waiter(){
+    public Cashier(){
         super();
     }
     public String getJob() {
