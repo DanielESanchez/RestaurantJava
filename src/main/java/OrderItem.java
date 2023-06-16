@@ -1,11 +1,11 @@
 public class OrderItem {
     private MenuItem menuItem;
     private boolean isBeingCooked;
-    private Employee chefAssigned;
+    private Chef chefAssigned;
     private boolean isCompleted =false;
     private int quantity;
 
-     public OrderItem(Employee chefAssigned, MenuItem menuItem){
+     public OrderItem(Chef chefAssigned, MenuItem menuItem){
         super();
         this.menuItem = menuItem;
         this.chefAssigned = chefAssigned;
@@ -15,7 +15,7 @@ public class OrderItem {
         return isBeingCooked;
     }
 
-    public Employee getChefAssigned() {
+    public Chef getChefAssigned() {
         return chefAssigned;
     }
 

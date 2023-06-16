@@ -12,9 +12,9 @@ public class Bill {
     private final List<OrderItem> items;
     private final Table table;
     private final Customer customer;
-    private final Employee cashier;
+    private final Cashier cashier;
 
-    public Bill( List<OrderItem> items, Table table, Customer customer, int discount, Employee cashier) {
+    public Bill( List<OrderItem> items, Table table, Customer customer, int discount, Cashier cashier) {
         this.dateBill = new Date();
         this.discount = discount;
         this.items = items;

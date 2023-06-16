@@ -3,12 +3,12 @@ import java.util.List;
 
 public class Order {
     private List<OrderItem> orderList;
-    private Employee waiterAssigned;
+    private Waiter waiterAssigned;
     private boolean isCompleted = false;
 
     private Table table;
 
-    public Order(Employee waiterAssigned, Table table){
+    public Order(Waiter waiterAssigned, Table table){
         this.orderList = new ArrayList<>();
         this.waiterAssigned = waiterAssigned;
         this.table = table;
@@ -34,7 +34,7 @@ public class Order {
         return table;
     }
 
-    public Employee getWaiterAssigned() {
+    public Waiter getWaiterAssigned() {
         return waiterAssigned;
     }
 }
